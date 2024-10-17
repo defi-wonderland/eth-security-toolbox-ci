@@ -103,8 +103,4 @@ RUN solc-select install 0.4.26 0.5.17 0.6.12 0.7.6 latest && solc-select use lat
 # Clone useful repositories
 RUN git clone --depth 1 https://github.com/crytic/building-secure-contracts.git
 
-# Configure MOTD
-COPY --link --chown=root:root motd /etc/motd
-RUN echo '\ncat /etc/motd\n' >> ~/.bashrc
-
 CMD ["/bin/bash"]
